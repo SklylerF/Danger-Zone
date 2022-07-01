@@ -3,13 +3,10 @@ var safeTravelUrl = document.getElementsByClassName("Data");
 var safeTravelBtn = document.getElementById("travel");
 var covidFetchBtn = document.getElementById("covid")
 
-//Open Weather
-var openWeatherUrl = 'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}'
-//https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+
 
 // drop down function
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -41,8 +38,7 @@ console.log(prov);
             'X-RapidAPI-Host': 'covid-19-statistics.p.rapidapi.com'
         }
     };
-
-    fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name='+prov+'', options)
+    fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name=Autauga', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
@@ -78,5 +74,174 @@ function getTravelApi() {
         .catch(err => console.error(err));
 }
 
-// safe travel button
 safeTravelBtn.addEventListener('click', getTravelApi);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//WEATHER APP
+const weatherTab = document.getElementById("weatherbtn");
+weatherTab.addEventListener("click", function(){
+  document.getElementById("main-data").innerHTML =
+  
+  `<nav class="container #ffffff white">
+  <div class="row teal #fafafa grey lighten-5">
+    <div class="input-field col s5 #fafafa grey lighten-5">
+      <input value="34.15" id="latitude" type="text" class="validate">
+      <label for="latitude">Lat</label>
+    </div>
+    <div class="input-field col s5 #fafafa grey lighten-5 offset-s2">
+      <input value="-117.34" id="longitude" type="text" class="validate">
+      <label for="longitude">Lon</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button id="btnGet" type="button" class="waves-effect waves-light btn">
+        Get Weather
+      </button>
+      <button id="btnCurrent" type="button" class="waves-effect waves-light btn">
+        Use Current Location
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <h2>Weather</h2>
+  <!-- results for weather data -->
+  <div class="weather-data row">
+    <div class="col">
+      <div class="card">
+        <span class="card-title">Date</span>
+        <img
+          src="http://openweathermap.org/img/wn/10d@4x.png"
+          class="card-img-top"
+          alt="Weather description"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Weather Label</h3>
+          <p >High Temp Low Temp</p>
+          <p >HighFeels like</p>
+          <p>Pressure</p>
+          <p>Humidty</p>
+          <p>UV Index</p>
+          <p>Precipitation</p>
+          <p>Dew Point</p>
+          <p>Wind speed and direction</p>
+          <p>Sunrise</p>
+          <p>Sunset</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>`;
+weatherApp.init();
+});
+
+const weatherApp= {
+    init: () => {
+      document
+        .getElementById('btnGet')
+        .addEventListener('click', weatherApp.fetchWeather);
+      document
+        .getElementById('btnCurrent')
+        .addEventListener('click', weatherApp.getLocation);
+    },
+    fetchWeather: () => {
+      
+      let lat = document.getElementById('latitude').value;
+      let lon = document.getElementById('longitude').value;
+      let key = 'e3734cbb56b89b904559b3338d8b8282';
+      let lang = 'en';
+      let units = 'imperial';
+      let url = "http://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&appid="+key+"&units="+units+"&lang="+lang+"";
+      
+      fetch(url)
+        .then((resp) => {
+          if (!resp.ok) throw new Error(resp.statusText);
+          return resp.json();
+        })
+        .then((data) => {
+          weatherApp.showWeather(data);
+        })
+        .catch(console.err);
+    },
+    getLocation: () => {
+      let opts = {
+        enableHighAccuracy: true,
+        timeout: 1000 * 10, 
+        maximumAge: 1000 * 60 * 5, 
+      };
+      navigator.geolocation.getCurrentPosition(weatherApp.ftw, weatherApp.wtf, opts);
+    },
+    ftw: (position) => {
+    
+      document.getElementById('latitude').value =
+        position.coords.latitude.toFixed(2);
+      document.getElementById('longitude').value =
+        position.coords.longitude.toFixed(2);
+    },
+    wtf: (err) => {
+    
+      console.error(err);
+    },
+    showWeather: (resp) => {
+      console.log(resp);
+      let row = document.querySelector('.weather-data');
+      
+      row.innerHTML = resp.daily
+        .map((day, index) => {
+          if (index <= 2) {
+            let dt = new Date(day.dt * 1000); 
+            let sr = new Date(day.sunrise * 1000).toTimeString();
+            let ss = new Date(day.sunset * 1000).toTimeString();
+            return `<div class="col">
+                <div class="card">
+                <h5 class="card-title">${dt.toDateString()}</h5>
+                  <img
+                    src="http://openweathermap.org/img/wn/${
+                      day.weather[0].icon
+                    }@4x.png"
+                    class="card-img-top"
+                    alt="${day.weather[0].description}"
+                  />
+                  <div class="card-content">
+                    <h3 class="card-title">${day.weather[0].main}</h3>
+                    <p>High ${day.temp.max}&deg;F Low ${
+              day.temp.min
+            }&deg;F</p>
+                    <p>High Feels like ${
+                      day.feels_like.day
+                    }&deg;F</p>
+                    <p>Pressure ${day.pressure}Pa</p>
+                    <p">Humidity ${day.humidity}%</p>
+                    <p>UV Index ${day.uvi}</p>
+                    <p>Precipitation ${day.pop * 100}%</p>
+                    <p>Dewpoint ${day.dew_point}</p>
+                    <p>Wind ${day.wind_speed}mph, ${
+              day.wind_deg
+            }&deg;</p>
+                    <p>Sunrise ${sr}</p>
+                    <p>Sunset ${ss}</p>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+          }
+        })
+        .join(' ');
+    },
+  };
+  //WEATHER APP
