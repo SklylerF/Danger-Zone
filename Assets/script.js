@@ -40,7 +40,7 @@ console.log(prov);
             'X-RapidAPI-Host': 'covid-19-statistics.p.rapidapi.com'
         }
     };
-    fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name='+prov+'', options)
+    fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name=Autauga', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
