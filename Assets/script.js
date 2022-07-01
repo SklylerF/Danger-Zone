@@ -3,8 +3,6 @@ var safeTravelUrl = document.getElementsByClassName("Data");
 var safeTravelBtn = document.getElementById("travel");
 var covidFetchBtn = document.getElementById("covid")
 
-//Open Weather
-var openWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={e3734cbb56b89b904559b3338d8b8282}"
 
 
 // drop down function
@@ -91,9 +89,9 @@ safeTravelBtn.addEventListener('click', getTravelApi);
 
 
 //WEATHER APP
-const weatherTab = document.getElementById("weather");
+const weatherTab = document.getElementById("weatherbtn");
 weatherTab.addEventListener("click", function(){
-  document.getElementById("Data").innerHTML =
+  document.getElementById("main-data").innerHTML =
   
   `<nav class="container #ffffff white">
   <div class="row teal #fafafa grey lighten-5">
