@@ -22,10 +22,6 @@ function getCovidApi() {
      .then(response => console.log(response))
      .catch(err => console.error(err));
  //   loop for the covid data
-     // for (var i = 0; i < data.length; i++) {
-  
-     // }
-  
  }
  covidFetchBtn.addEventListener('click', getCovidApi)
 // safe travel
