@@ -3,8 +3,6 @@ var safeTravelUrl = document.getElementsByClassName("Data");
 var safeTravelBtn = document.getElementById("travel");
 var covidFetchBtn = document.getElementById("covid")
 
-//Open Weather
-var openWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={e3734cbb56b89b904559b3338d8b8282}"
 
 
 // drop down function
@@ -38,11 +36,10 @@ console.log(prov);
 }
 covidFetchBtn.addEventListener('click', getCovidApi)
 
-
-// safe travel
+// safe travel url
 var safeTravelUrl = "https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en"
 
-// function getTravelApi()
+// function getTravelApi
 function getTravelApi() {
     const options = {
         method: 'GET',
@@ -51,8 +48,11 @@ function getTravelApi() {
             'X-RapidAPI-Secret': 'google-maps28.p.rapidapi.com'
         }
     };
+    var lat = 34.07;
+    var lon = -117.18;
 
-    fetch('https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en',options)
+    // fetch for google maps
+    fetch("https://google-maps28.p.rapidapi.com/maps/api/place/nearbysearch/json?location="+lat+"%2C"+lon+"&radius=5000&language=en&keyword=hospitals", options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
@@ -75,9 +75,9 @@ safeTravelBtn.addEventListener('click', getTravelApi);
 
 
 //WEATHER APP
-const weatherTab = document.getElementById("weather");
+const weatherTab = document.getElementById("weatherbtn");
 weatherTab.addEventListener("click", function(){
-  document.getElementById("Data").innerHTML =
+  document.getElementById("main-data").innerHTML =
   
   `<nav class="container #ffffff white">
   <div class="row teal #fafafa grey lighten-5">
