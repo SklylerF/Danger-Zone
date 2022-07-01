@@ -15,20 +15,39 @@
         <h1 class="style">Danger Zone</h1>
         <p class="style">"Have no fear, Danger Zone is here!"</p>
     </header>
+
+    <!-- nav locations for buttons -->
     <nav class="nav">
         <a class="waves-effect waves-light btn-large" href="#" id="covid">Covid Cases</a>
         <a class="waves-effect waves-light btn-large" href="#" id="weather">Weather</a>
-        <!-- <a class="crime">crime</a> -->
+        <a class="waves-effect waves-light btn-large" href="#" id="travel">Travel</a>
     </nav>
+   
+      </div>
     <!-- search bar -->
     <div class="input-field">
         <input id="search" type="search"
         placeholder="Search Your Area" required>
         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
         <i class="material-icons">close</i>
+
     </div>
+    <!-- filtered dropdown -->
+  <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          <a href="#about">About</a>
+          <a href="#base">Base</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#custom">Custom</a>
+          <a href="#support">Support</a>
+          <a href="#tools">Tools</a>
+        </div>
     <!-- map -->
     <div class="Data">
+        
     
     </div>
     <!-- js script links -->
