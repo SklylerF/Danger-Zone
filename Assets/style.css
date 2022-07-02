@@ -1,9 +1,19 @@
 header {
     text-align: center;
     
-    background: lightcoral;
-    padding: 15px;
+    background:linear-gradient(to top, #0b486b, #f56217); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+    padding: 20px;
 }
+
+h1 {
+  color: greenyellow;
+}
+
+p {
+  color: greenyellow;
+  font-size: 25px;
+}
+
 .label-icon {
     justify-content: right;
 }
@@ -16,6 +26,10 @@ p {
 
 nav {
     text-align: center;
+    background-color: #0b2737;
+}
+a {
+  background-color: #f56217;
 }
 
 /* Dropdown Button */
