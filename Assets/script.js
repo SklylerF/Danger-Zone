@@ -89,8 +89,7 @@ safeTravelBtn.addEventListener('click', getTravelApi);
 
 
 
-
-//WEATHER APP
+//==================================================================WEATHER APP====================================================================
 const weatherTab = document.getElementById("weatherbtn");
 weatherTab.addEventListener("click", function(){
   document.getElementById("main-data").innerHTML =
@@ -119,7 +118,7 @@ weatherTab.addEventListener("click", function(){
 </nav>
 
 <main class="container">
-  <h2>Weather</h2>
+  <h2 class="weather-title">Weather</h2>
   <!-- results for weather data -->
   <div class="weather-data row">
     <div class="col">
@@ -132,8 +131,8 @@ weatherTab.addEventListener("click", function(){
         />
         <div class="card-content">
           <h3 class="card-title">Weather Label</h3>
-          <p >High Temp Low Temp</p>
-          <p >HighFeels like</p>
+          <p>High Temp Low Temp</p>
+          <p>HighFeels like</p>
           <p>Pressure</p>
           <p>Humidty</p>
           <p>UV Index</p>
@@ -226,7 +225,7 @@ const weatherApp= {
                       day.feels_like.day
                     }&deg;F</p>
                     <p>Pressure ${day.pressure}Pa</p>
-                    <p">Humidity ${day.humidity}%</p>
+                    <p>Humidity ${day.humidity}%</p>
                     <p>UV Index ${day.uvi}</p>
                     <p>Precipitation ${day.pop * 100}%</p>
                     <p>Dewpoint ${day.dew_point}</p>
@@ -244,4 +243,4 @@ const weatherApp= {
         .join(' ');
     },
   };
-  //WEATHER APP
+  //==================================================================WEATHER APP====================================================================
