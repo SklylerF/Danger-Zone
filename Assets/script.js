@@ -90,9 +90,9 @@ safeTravelBtn.addEventListener('click', getTravelApi);
 
 
 //==================================================================WEATHER APP====================================================================
-const weatherTab = document.getElementById("weatherbtn");
-weatherTab.addEventListener("click", function(){
-  document.getElementById("main-data").innerHTML =
+// const weatherTab = document.getElementById("weatherbtn");
+// weatherTab.addEventListener("click", function(){
+//   document.getElementById("main-data").innerHTML =
   
 //   `<nav class="container #ffffff white">
 //   <div class="row teal #fafafa grey lighten-5">
@@ -117,37 +117,37 @@ weatherTab.addEventListener("click", function(){
 //   </div>
 // </nav>
 
-<main class="container">
-  <h2 class="weather-title">Weather</h2>
-  <!-- results for weather data -->
-  <div class="weather-data row">
-    <div class="col">
-      <div class="card">
-        <span class="card-title">Date</span>
-        <img
-          src="http://openweathermap.org/img/wn/10d@4x.png"
-          class="card-img-top"
-          alt="Weather description"
-        />
-        <div class="card-content">
-          <h3 class="card-title">Weather Label</h3>
-          <p>High Temp Low Temp</p>
-          <p>HighFeels like</p>
-          <p>Pressure</p>
-          <p>Humidty</p>
-          <p>UV Index</p>
-          <p>Precipitation</p>
-          <p>Dew Point</p>
-          <p>Wind speed and direction</p>
-          <p>Sunrise</p>
-          <p>Sunset</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>`;
-weatherApp.init();
-});
+// <main class="container">
+//   <h2 class="weather-title">Weather</h2>
+//   <!-- results for weather data -->
+//   <div class="weather-data row">
+//     <div class="col">
+//       <div class="card">
+//         <span class="card-title">Date</span>
+//         <img
+//           src="http://openweathermap.org/img/wn/10d@4x.png"
+//           class="card-img-top"
+//           alt="Weather description"
+//         />
+//         <div class="card-content">
+//           <h3 class="card-title">Weather Label</h3>
+//           <p>High Temp Low Temp</p>
+//           <p>HighFeels like</p>
+//           <p>Pressure</p>
+//           <p>Humidty</p>
+//           <p>UV Index</p>
+//           <p>Precipitation</p>
+//           <p>Dew Point</p>
+//           <p>Wind speed and direction</p>
+//           <p>Sunrise</p>
+//           <p>Sunset</p>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </main>`;
+// weatherApp.init();
+// });
 
 // const weatherApp= {
 //     init: () => {
@@ -200,47 +200,47 @@ weatherApp.init();
 //       console.log(resp);
 //       let row = document.querySelector('.weather-data');
       
-      row.innerHTML = resp.daily
-        .map((day, index) => {
-          if (index <= 2) {
-            let dt = new Date(day.dt * 1000); 
-            let sr = new Date(day.sunrise * 1000).toTimeString();
-            let ss = new Date(day.sunset * 1000).toTimeString();
-            return `<div class="col">
-                <div class="card">
-                <h5 class="card-title">${dt.toDateString()}</h5>
-                  <img
-                    src="http://openweathermap.org/img/wn/${
-                      day.weather[0].icon
-                    }@4x.png"
-                    class="card-img-top"
-                    alt="${day.weather[0].description}"
-                  />
-                  <div class="card-content">
-                    <h3 class="card-title">${day.weather[0].main}</h3>
-                    <p>High ${day.temp.max}&deg;F Low ${
-              day.temp.min
-            }&deg;F</p>
-                    <p>High Feels like ${
-                      day.feels_like.day
-                    }&deg;F</p>
-                    <p>Pressure ${day.pressure}Pa</p>
-                    <p>Humidity ${day.humidity}%</p>
-                    <p>UV Index ${day.uvi}</p>
-                    <p>Precipitation ${day.pop * 100}%</p>
-                    <p>Dewpoint ${day.dew_point}</p>
-                    <p>Wind ${day.wind_speed}mph, ${
-              day.wind_deg
-            }&deg;</p>
-                    <p>Sunrise ${sr}</p>
-                    <p>Sunset ${ss}</p>
-                  </div>
-                </div>
-              </div>
-            </div>`;
-          }
-        })
-        .join(' ');
-    },
-  };
-  //==================================================================WEATHER APP====================================================================
+//       row.innerHTML = resp.daily
+//         .map((day, index) => {
+//           if (index <= 2) {
+//             let dt = new Date(day.dt * 1000); 
+//             let sr = new Date(day.sunrise * 1000).toTimeString();
+//             let ss = new Date(day.sunset * 1000).toTimeString();
+//             return `<div class="col">
+//                 <div class="card">
+//                 <h5 class="card-title">${dt.toDateString()}</h5>
+//                   <img
+//                     src="http://openweathermap.org/img/wn/${
+//                       day.weather[0].icon
+//                     }@4x.png"
+//                     class="card-img-top"
+//                     alt="${day.weather[0].description}"
+//                   />
+//                   <div class="card-content">
+//                     <h3 class="card-title">${day.weather[0].main}</h3>
+//                     <p>High ${day.temp.max}&deg;F Low ${
+//               day.temp.min
+//             }&deg;F</p>
+//                     <p>High Feels like ${
+//                       day.feels_like.day
+//                     }&deg;F</p>
+//                     <p>Pressure ${day.pressure}Pa</p>
+//                     <p>Humidity ${day.humidity}%</p>
+//                     <p>UV Index ${day.uvi}</p>
+//                     <p>Precipitation ${day.pop * 100}%</p>
+//                     <p>Dewpoint ${day.dew_point}</p>
+//                     <p>Wind ${day.wind_speed}mph, ${
+//               day.wind_deg
+//             }&deg;</p>
+//                     <p>Sunrise ${sr}</p>
+//                     <p>Sunset ${ss}</p>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>`;
+//           }
+//         })
+//         .join(' ');
+//     },
+//   };
+//   //==================================================================WEATHER APP====================================================================
