@@ -1,6 +1,6 @@
-.style {
+header {
     text-align: center;
-    font: revert;
+    
     background: lightcoral;
     padding: 15px;
 }
@@ -18,3 +18,16 @@ nav {
     text-align: center;
 }
 
+
+  .weather-data {
+    width: max-content;
+  }
+
+  .weather-title{
+    margin-top: 90px;
+  }
+
+  #main-data{
+    width: max-content;
+    justify-content: center;
+  }
