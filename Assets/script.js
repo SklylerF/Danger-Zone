@@ -79,10 +79,64 @@ safeTravelBtn.addEventListener('click', getTravelApi);
 
 
 
+//==================================================================Travel====================================================================
+
+const travelApp = {
+init: () =>{
+  ///event listeners to start the travel app go here
+},
+fetchTravel: () =>{
+  const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '2091fc13f6msh05604bf0f21c13dp1243e5jsn71a08e6cf84d',
+        'X-RapidAPI-Secret': 'google-maps28.p.rapidapi.com'
+    }
+};
+let lat= document.getElementById("#").value;
+let lon= document.getElementById("#").value;
+let keyword= document.getElementById("#").value
+let url= ("https://google-maps28.p.rapidapi.com/maps/api/place/nearbysearch/json?location="+lat+"%2C"+lon+"&radius=5000&language=en&keyword="+keyword+"", options)
+
+fetch(url)
+        .then((resp) => {
+          if (!resp.ok) throw new Error(resp.statusText);
+          return resp.json();
+        })
+        .then((data) => {
+          travelApp.showResponse(data); 
+        })
+        .catch(console.err);
+    },
+    getLocation: () => {
+      let opts = {
+        enableHighAccuracy: true,
+        timeout: 1000 * 10, 
+        maximumAge: 1000 * 60 * 5, 
+      };
+      navigator.geolocation.getCurrentPosition(travelApp.ftw, travelApp.wtf, opts);
+    },
+    ftw: (position) => {
+    
+      document.getElementById('#').value =
+        position.coords.latitude.toFixed(2);
+      document.getElementById('#').value =
+        position.coords.longitude.toFixed(2);
+    },
+    wtf: (err) => {
+    
+      console.error(err);
+    },
+    showResponse: (resp) => {
+      console.log(resp);
+      let row = document.querySelector('.');
+      row.innerHTML= ``
+}
+}
 
 
 
-
+//==================================================================Travel====================================================================
 
 
 
