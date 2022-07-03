@@ -1,17 +1,25 @@
-header {
+body{
     text-align: center;
-    
-    background:linear-gradient(to top, #0b486b, #f56217); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
     padding: 20px;
 }
+   img {
+    background-attachment: fixed;
+   }
+    /* background:linear-gradient(to top, #0b486b, #f56217); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+; */
 
 h1 {
   color: greenyellow;
-}
+    position: absolute;
+    left: 400px;
+    top: 125px;
+  }
 
 p {
   color: greenyellow;
   font-size: 25px;
+  position: absolute;
+    left: 525px;
+    top: 225px;
 }
 
 .label-icon {
