@@ -14,12 +14,12 @@ h1 {
     top: 125px;
   }
 
-p {
+h2 {
   color: greenyellow;
   font-size: 25px;
   position: absolute;
     left: 525px;
-    top: 225px;
+    top: 250px;
 }
 
 .label-icon {
