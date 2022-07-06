@@ -1,92 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"
-      integrity="sha512-t38vG/f94E72wz6pCsuuhcOPJlHKwPy+PY+n1+tJFzdte3hsIgYE7iEpgg/StngunGszVMrRfvwZinrza0vMTA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"
-      integrity="sha512-m2PhLxj2N91eYrIGU2cmIu2d0SkaE4A14bCjVb9zykvp6WtsdriFCiXQ/8Hdj0kssUB/Nz0dMBcoLsJkSCto0Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/d6c990409e.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <title>Danger Zone</title>
-    <!-- <p style="background-image: url(./images/city.jpg);"></p> -->
-    <img
-      src="./images/city.jpg"
-      alt="grey and black city"
-      width="1385"
-      height="350"
-    />
-    <h1 class="fa-solid fa-circle-radiation fa-5x">Danger Zon e</h1>
-    <h2>"Have no fear, Danger Zone is here!"</h2>
-  </head>
 
-  <body>
-    <!-- nav locations for buttons -->
-    <nav class="nav">
-      <a class="waves-effect waves-light btn-large" href="#" id="covid"
-        >Covid Cases</a
-      >
-      <a class="waves-effect waves-light btn-large" href="#" id="weatherbtn"
-        >Weather</a
-      >
-      <a class="waves-effect waves-light btn-large" href="#" id="travel"
-        >Travel</a
-      >
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"
+    integrity="sha512-t38vG/f94E72wz6pCsuuhcOPJlHKwPy+PY+n1+tJFzdte3hsIgYE7iEpgg/StngunGszVMrRfvwZinrza0vMTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"
+    integrity="sha512-m2PhLxj2N91eYrIGU2cmIu2d0SkaE4A14bCjVb9zykvp6WtsdriFCiXQ/8Hdj0kssUB/Nz0dMBcoLsJkSCto0Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://kit.fontawesome.com/d6c990409e.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <title>Danger Zone</title>
+  <!-- <p style="background-image: url(./images/city.jpg);"></p> -->
+  <img src="./images/city.jpg" alt="grey and black city" width="1385" height="350" />
+  <h1 class="fa-solid fa-circle-radiation fa-5x">Danger Zon e</h1>
+  <h2>"Have no fear, Danger Zone is here!"</h2>
+</head>
 
-    <!-- auto complete -->
-    <div class="row">
-      <div class="col s12">
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">textsms</i>
-            <input
-              id="search"
-              type="text"
-              id="autocomplete-input"
-              class="autocomplete"
-            />
-            <label for="autocomplete-input">Search</label>
-          </div>
-        </div>
-      </div>
-    </div>
+<body>
+  <!-- nav locations for buttons -->
+  <nav class="nav">
+    <a class="waves-effect waves-light btn-large" href="#" id="covid">Covid Cases</a>
+    <a class="waves-effect waves-light btn-large" href="#" id="weatherbtn">Weather</a>
+    <a class="waves-effect waves-light btn-large" href="#" id="travel">Travel</a>
+  </nav>
 
-    <!-- search bar -->
+
+
+
+  <!-- map -->
+
+  <div id="Data">
     <div class="input-field">
-      <input
-        id="search"
-        type="search"
-        placeholder="Search Your Area"
-        required
-      />
-      <label class="label-icon active" for="search"
-        ><i class="material-icons">search</i></label
-      >
-      <i class="material-icons">close</i>
-      <div id="main-data"></div>
+      <!-- <input id="search" type="search " class="autocomplete" placeholder="Search Your Area" required> -->
+      <!-- <label class="label-icon" for="search"><i class="material-icons">search</i></label> -->
+    
     </div>
+    
+    <div class="Data" id="main-data">
+    </div>
+
+
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./script.js"></script>
-  </body>
+</body>
+
 </html>
