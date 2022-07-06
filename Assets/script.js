@@ -250,7 +250,7 @@ weatherTab.addEventListener("click", function () {
 </nav>
 
 <main class="container">
-  <h2 class="weather-title">Weather</h2>
+  <h3 class="weather-title">Weather</h3>
   <!-- results for weather data -->
   <div class="weather-data row">
     <div class="col">
@@ -262,7 +262,7 @@ weatherTab.addEventListener("click", function () {
           alt="Weather description"
         />
         <div class="card-content">
-          <h3 class="card-title">Weather Label</h3>
+          <h4 class="card-title">Weather Label</h4>
           <p>High Temp Low Temp</p>
           <p>HighFeels like</p>
           <p>Pressure</p>
