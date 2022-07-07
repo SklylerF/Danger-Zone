@@ -39,7 +39,7 @@ fetch('https://covid-19-statistics.p.rapidapi.com/provinces?&iso=USA', options)
       var instances = M.Autocomplete.init(elems, dropOptions);
       const elem = document.querySelector('.autocomplete');
       var instance = M.Autocomplete.getInstance(elem);
-      elem.frame
+      
     }
     covidFetchBtn.addEventListener('click', getCovidSearchBar)
   }))

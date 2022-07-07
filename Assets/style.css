@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 
 body{
     background-color:#F8F9F9;
     text-align: center;
     padding: 20px;
     }
-=======
 body {
   background-color: #F8F9F9;
   text-align: center;
@@ -17,7 +15,6 @@ img {
 }
 
 /* background:linear-gradient(to top, #0b486b, #f56217); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+; */
->>>>>>> refs/remotes/origin/html
 
 
    img {
@@ -27,31 +24,25 @@ img {
   
 h1 {
   color: greenyellow;
-<<<<<<< HEAD
     position: absolute;
     left: 400px;
     top: 125px;
-=======
   position: absolute;
   left: 400px;
   top: 125px;
   text-align: center;
->>>>>>> refs/remotes/origin/html
 }
 
 h2 {
   color: greenyellow;
   font-size: 25px;
   position: absolute;
-<<<<<<< HEAD
     left: 525px;
     top: 250px;
-  }
-=======
+  
   left: 525px;
   top: 250px;
 }
->>>>>>> refs/remotes/origin/html
 
 .label-icon {
   justify-content: right;
@@ -91,7 +82,6 @@ h3 {
   color: #f56217;
 }
 
-<<<<<<< HEAD
   .card-title {
     text-align: center;
   }
@@ -161,8 +151,6 @@ h3 {
     flex-wrap: wrap;
   }
 }
-=======
 .card-title {
   text-align: center;
 }
->>>>>>> refs/remotes/origin/html
