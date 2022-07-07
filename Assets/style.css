@@ -1,9 +1,23 @@
+<<<<<<< HEAD
 
 body{
     background-color:#F8F9F9;
     text-align: center;
     padding: 20px;
     }
+=======
+body {
+  background-color: #F8F9F9;
+  text-align: center;
+  padding: 20px;
+}
+
+img {
+  background-attachment: fixed;
+}
+
+/* background:linear-gradient(to top, #0b486b, #f56217); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+; */
+>>>>>>> refs/remotes/origin/html
 
 
    img {
@@ -13,57 +27,71 @@ body{
   
 h1 {
   color: greenyellow;
+<<<<<<< HEAD
     position: absolute;
     left: 400px;
     top: 125px;
+=======
+  position: absolute;
+  left: 400px;
+  top: 125px;
+  text-align: center;
+>>>>>>> refs/remotes/origin/html
 }
 
 h2 {
   color: greenyellow;
   font-size: 25px;
   position: absolute;
+<<<<<<< HEAD
     left: 525px;
     top: 250px;
   }
+=======
+  left: 525px;
+  top: 250px;
+}
+>>>>>>> refs/remotes/origin/html
 
 .label-icon {
-    justify-content: right;
+  justify-content: right;
 }
 
-#search{
-    text-align: center;
+#search {
+  text-align: center;
 }
 
 p {
-    text-align: center;
+  text-align: center;
 }
 
 nav {
-    text-align: center;
-    background-color: #0b2737;
+  text-align: center;
+  background-color: #0b2737;
 }
 
 a {
   background-color: #f56217;
 }
 
-  .weather-data {
-    width: max-content;
-  }
+.weather-data {
+  width: max-content;
+}
 
-  .weather-title{
-    margin-top: 90px;
-  }
+.weather-title {
+  margin-top: 90px;
+}
 
-  #main-data{
-    width: max-content;
-    justify-content: center;
-  }
+#main-data {
+  width: max-content;
+  justify-content: center;
+}
 
-  h3 {
-    color: #f56217;
-  }
+h3 {
+  color: #f56217;
+}
 
+<<<<<<< HEAD
   .card-title {
     text-align: center;
   }
@@ -133,3 +161,8 @@ a {
     flex-wrap: wrap;
   }
 }
+=======
+.card-title {
+  text-align: center;
+}
+>>>>>>> refs/remotes/origin/html

@@ -17,88 +17,38 @@ var dropOptions = {
     "Alameda County, CA": null,
     "Autauga": null,
 
-//     'Baldwin'
-// 'Barbour'
-// 'Bibb'
-// 'Blount' 
-// 'Bullock'
-// 'Butler' 
-// 'Calhoun'
-// 'Chambers'
-// 'Cherokee'
-// 'Chilton'
-// 'Choctaw'
-// 'Clarke'
-// 'Clay'
-// 'Cleburne'
-// 'Coffee'
-// 'Colbert'
-// 'Conecuh'
-// 'Coosa'
-// 'Covington'
-// 'Crenshaw'
-// 'Cullman'
-// 'Dale'
-// 'Dallas'
-// 'DeKalb'
-// 'Elmore'
-// 'Escambia'
-// 'Etowah'
-// 'Fayette'
-// 'Franklin'
-// 'Geneva'
-// 'Greene'
-// 'Hale'
-// 'Henry'
-// 'Houston'
-// 'Jackson'
-// 'Jefferson'
-// 'Lamar'
-// 'Lauderdale'
-// 'Lawrence'
-// 'Lee'
-// 'Limestone'
-// 'Lowndes'
-// 'Macon'
-// 'Madison'
-// 'Marengo'
-// 'Marion'
-// 'Marshall'
-// 'Mobile'
-// 'Monroe'
-// 'Montgomery'
-// 'Morgan'
-// 'Out of AL'
-// 'Perry'
-// 'Pickens'
-// 'Pike'
-// 'Randolph'
-// 'Russell'
-// 'Shelby'
-// 'St. Clair'
-// 'Sumter'
-// 'Talladega'
-// 'Tallapoosa'
-// 'Tuscaloosa'
-// 'Unassigned'
-// 'Walker'
-// 'Washington'
-// 'Wilcox'
-// 'Winston'
+   
   }
 }
 
 
-//auto complete function 
-document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('.autocomplete');
-  var instances = M.Autocomplete.init(elems, dropOptions);
-});
-const elem = document.querySelector('.autocomplete');
-var instance = M.Autocomplete.getInstance(elem);
+
 
 // ================================================================covid========================================================================
+//  filtered drop down 
+function getCovidSearchBar() {
+  document.getElementById("Data").innerHTML =
+  `<div class="input-field">
+  <input id="search" type="search " class="autocomplete"
+  placeholder="Search Your Area" required>
+  
+  </div>`
+  
+  const covidEnterBtn = document.createElement('button')
+  covidEnterBtn.innerText = 'Enter'
+  covidEnterBtn.className = 'waves-effect waves-light btn-large'
+  covidEnterBtn.addEventListener('click', getCovidApi)
+  dataEl.append(covidEnterBtn);
 
+  var elems = document.querySelectorAll('.autocomplete');
+  var instances = M.Autocomplete.init(elems, dropOptions);
+  const elem = document.querySelector('.autocomplete');
+  var instance = M.Autocomplete.getInstance(elem);
+}
+covidFetchBtn.addEventListener('click', getCovidSearchBar)
+
+
+//  covid api fetch 
 function getCovidApi() {
   let prov = document.getElementById('search').value
   console.log(prov);
@@ -107,28 +57,21 @@ function getCovidApi() {
   fetch('https://covid-19-statistics.p.rapidapi.com/reports?region_province=' + prov + '&iso=USA&region_name=US&q=US%20' + prov + '', options)
     .then(response => response.json())
     .then(response => console.log(response))
-    // .then(err => console.error(err))
-    .then(function (data) {
-      for (var i = 0; i < data; i++) {
-        var covidData = document.createElement('h3');
-        covidData.textContent = data[i].region.cities;
-        dataEl.append(covidData);
-        console.log(covidData);
-      }
-    });
+    .then(err => console.error(err))
+  
 
-  fetch('https://covid-19-statistics.p.rapidapi.com/provinces?iso=USA', options)
+  fetch('https://covid-19-statistics.p.rapidapi.com/provinces?$filter=amount gt 202&iso=USA', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
-  fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name='+prov+'', options)
+  fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name=' + prov + '', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
 }
-covidFetchBtn.addEventListener('click', getCovidApi)
+// covidFetchBtn.addEventListener('click', getCovidApi)
 // ================================================================covid========================================================================
 // safe travel url
 var safeTravelUrl = "https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en"
@@ -250,7 +193,7 @@ weatherTab.addEventListener("click", function () {
 </nav>
 
 <main class="container">
-  <h3 class="weather-title">Weather</h3>
+  <h2 class="weather-title">Weather</h2>
   <!-- results for weather data -->
   <div class="weather-data row">
     <div class="col">
@@ -262,7 +205,7 @@ weatherTab.addEventListener("click", function () {
           alt="Weather description"
         />
         <div class="card-content">
-          <h4 class="card-title">Weather Label</h4>
+          <h3 class="card-title">Weather Label</h3>
           <p>High Temp Low Temp</p>
           <p>HighFeels like</p>
           <p>Pressure</p>
