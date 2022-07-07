@@ -9,43 +9,46 @@ const options = {
     'X-RapidAPI-Host': 'covid-19-statistics.p.rapidapi.com'
   }
 };
-
-var dropOptions = {
-  data: {
-    " Norfolk County, MA": null,
-    "Alabama": null,
-    "Alameda County, CA": null,
-    "Autauga": null,
-
-   
-  }
-}
-
-
-
-
-// ================================================================covid========================================================================
-//  filtered drop down 
-function getCovidSearchBar() {
-  document.getElementById("Data").innerHTML =
-  `<div class="input-field">
+fetch('https://covid-19-statistics.p.rapidapi.com/provinces?&iso=USA', options)
+  .then(response => response.json())
+  .then(response => response.data.forEach(function (item) {
+    let provinceData = item.province;
+    // console.log(provinceData);
+    let frame = {}
+    frame[provinceData] = null
+    console.log(frame);
+     
+    var dropOptions = frame
+    
+    //  filtered drop down 
+    function getCovidSearchBar() {
+      document.getElementById("Data").innerHTML =
+        `<div class="input-field">
   <input id="search" type="search " class="autocomplete"
   placeholder="Search Your Area" required>
   
   </div>`
-  
-  const covidEnterBtn = document.createElement('button')
-  covidEnterBtn.innerText = 'Enter'
-  covidEnterBtn.className = 'waves-effect waves-light btn-large'
-  covidEnterBtn.addEventListener('click', getCovidApi)
-  dataEl.append(covidEnterBtn);
 
-  var elems = document.querySelectorAll('.autocomplete');
-  var instances = M.Autocomplete.init(elems, dropOptions);
-  const elem = document.querySelector('.autocomplete');
-  var instance = M.Autocomplete.getInstance(elem);
-}
-covidFetchBtn.addEventListener('click', getCovidSearchBar)
+      const covidEnterBtn = document.createElement('button')
+      covidEnterBtn.innerText = 'Enter'
+      covidEnterBtn.className = 'waves-effect waves-light btn-large'
+      covidEnterBtn.addEventListener('click', getCovidApi)
+      dataEl.append(covidEnterBtn);
+
+      var elems = document.querySelectorAll('.autocomplete');
+      var instances = M.Autocomplete.init(elems, dropOptions);
+      const elem = document.querySelector('.autocomplete');
+      var instance = M.Autocomplete.getInstance(elem);
+      elem.frame
+    }
+    covidFetchBtn.addEventListener('click', getCovidSearchBar)
+  }))
+
+
+// ================================================================covid========================================================================
+
+
+
 
 
 //  covid api fetch 
@@ -57,21 +60,18 @@ function getCovidApi() {
   fetch('https://covid-19-statistics.p.rapidapi.com/reports?region_province=' + prov + '&iso=USA&region_name=US&q=US%20' + prov + '', options)
     .then(response => response.json())
     .then(response => console.log(response))
-    .then(err => console.error(err))
-  
-
-  fetch('https://covid-19-statistics.p.rapidapi.com/provinces?$filter=amount gt 202&iso=USA', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
     .catch(err => console.error(err));
 
-  fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name=' + prov + '', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+
+
+  // fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name=' + prov + '', options)
+  //   .then(response => response.json())
+  //   .then(response => console.log(response))
+  //   .catch(err => console.error(err));
 
 }
-// covidFetchBtn.addEventListener('click', getCovidApi)
+
+
 // ================================================================covid========================================================================
 // safe travel url
 var safeTravelUrl = "https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en"
