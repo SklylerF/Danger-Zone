@@ -1,44 +1,42 @@
-
-body{
-    background-color:#F8F9F9;
-    text-align: center;
-    padding: 20px;
-    height: 100%;
+body {
+  background-color: #F8F9F9;
+  text-align: center;
+  padding: 20px;
+  height: 100%;
   margin: 0;
   padding: 0;
-    }
-    
-    header{
+}
 
-    }
-    span {
-      font-size: large;
-      color: black;
-    }
+header {}
+
+span {
+  font-size: large;
+  color: black;
+}
 
 img {
   background-attachment: fixed;
 }
+
 #Data {
   width: max-content;
-  justify-content: center; 
+  justify-content: center;
 }
 
 /* background:linear-gradient(to top, #0b486b, #f56217); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+; */
 
 
-   img {
-    background-attachment:scroll;
-    flex-wrap: wrap;
-   }
-  
+img {
+  background-attachment: scroll;
+  flex-wrap: wrap;
+}
+
 h1 {
   color: greenyellow;
-    position: absolute;
-    left: 400px;
-    top: 125px;
   position: absolute;
-  left: 443px;
+  left: 595px;
+  top: 125px;
+  position: absolute;
   top: 125px;
   text-align: center;
   justify-content: center;
@@ -48,8 +46,8 @@ h2 {
   color: greenyellow;
   font-size: 25px;
   position: absolute;
-    left: 575px;
-    top: 250px;
+  left: 765px;
+  top: 250px;
 
 }
 
@@ -92,12 +90,14 @@ h3 {
   color: #f56217;
 }
 
-  .card-title {
-    text-align: center;
-  }
+.card-title {
+  text-align: center;
+}
 
-  @media (max-width:1280px) and (min-width:1024px) {
-  h1, h2 {
+@media (max-width:1280px) and (min-width:1024px) {
+
+  h1,
+  h2 {
     font-size: 3rem;
     flex-wrap: wrap;
     text-align: center;
@@ -105,7 +105,9 @@ h3 {
 }
 
 @media (max-width:1024px) and (min-width:787px) {
-  h1, h2{
+
+  h1,
+  h2 {
     font-size: 2rem;
     flex-wrap: wrap;
     text-size-adjust: 1.5rem;
@@ -113,7 +115,9 @@ h3 {
 }
 
 @media (max-width:787px) and (min-width:480px) {
-  h1,h2 {
+
+  h1,
+  h2 {
     font-size: 1.5rem;
     flex-wrap: wrap;
     text-align: center;
@@ -121,49 +125,64 @@ h3 {
 }
 
 @media (max-width:1280px) and (min-width:1024px) {
-  body, nav {
+
+  body,
+  nav {
     font-size: 3rem;
     flex-wrap: wrap;
   }
 }
 
 @media (max-width:1024px) and (min-width:787px) {
-  body, nav {
+
+  body,
+  nav {
     font-size: 2rem;
     flex-wrap: wrap;
   }
 }
 
 @media (max-width:787px) and (min-width:480px) {
-  body, nav {
+
+  body,
+  nav {
     font-size: 1.5rem;
     flex-wrap: wrap;
-  
+
   }
 }
+
 @media (max-width:1280px) and (min-width:1024px) {
-  img, body {
-  font-size: 3rem;
+
+  img,
+  body {
+    font-size: 3rem;
     flex-wrap: wrap;
   }
 }
 
 @media (max-width:1024px) and (min-width:787px) {
-  img, body {
+
+  img,
+  body {
     font-size: 2rem;
     flex-wrap: wrap;
   }
 }
 
 @media (max-width:787px) and (min-width:480px) {
-  img, body {
+
+  img,
+  body {
     font-size: 1.5rem;
     flex-wrap: wrap;
   }
 }
+
 .card-title {
   text-align: center;
 }
+
 #map {
   height: 100%;
 }
@@ -266,4 +285,3 @@ table {
 .iw_table_icon {
   text-align: right;
 }
-

@@ -26,7 +26,7 @@ function getCovidSearchBar() {
    
     
       <div class="row">
-        <h2>COVID -19 Cases in <span id="city"></span> <img src="" id="flag"></h2>
+        
         <div class="board">
           <div class="col s6">
           <div class="card blue"> <div class="card-content white-text"><i class="fa fa-tachometer fa-2x"></i><h5 class="card-title">Active Cases</h5><span id="active"></span></div></div>
@@ -91,7 +91,7 @@ function fixMainDataWeather (){
   document.getElementById("main-data").style.marginLeft= '0px'
 }
 function fixMainDataCovid (){
-  document.getElementById("main-data").style.marginLeft= "386px"
+  document.getElementById("main-data").style.marginLeft= "600px"
 }
 function hideHeader(){
   document.getElementById("logo").style.display= "none";
