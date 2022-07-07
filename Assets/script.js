@@ -2,6 +2,7 @@ var dataEl = document.getElementById("Data");
 var safeTravelUrl = document.getElementsByClassName("Data");
 var safeTravelBtn = document.getElementById("travel");
 var covidFetchBtn = document.getElementById("covid")
+// ================================================================covid========================================================================
 const options = {
   method: 'GET',
   headers: {
@@ -9,69 +10,45 @@ const options = {
     'X-RapidAPI-Host': 'covid-19-statistics.p.rapidapi.com'
   }
 };
-fetch('https://covid-19-statistics.p.rapidapi.com/provinces?&iso=USA', options)
-  .then(response => response.json())
-  .then(response => response.data.forEach(function (item) {
-    let provinceData = item.province;
-    // console.log(provinceData);
-    let frame = {}
-    frame[provinceData] = null
-    console.log(frame);
-     
-    var dropOptions = frame
-    
-    //  filtered drop down 
-    function getCovidSearchBar() {
-      document.getElementById("Data").innerHTML =
-        `<div class="input-field">
+
+var dropOptions = {
+  data: {
+"California": null,"Alameda": null, "Alpine": null, "Amador": null, "Butte": null, "Calaveras": null,"Colusa": null,"Contra Costa": null,"Del Norte": null, "El Dorado": null, "Fresno": null, "Glenn": null,"Humboldt": null, "Imperial": null, "Inyo": null, "Kern": null, "Kings": null, "Lake": null,"Lassen": null, "Los Angeles": null, "Madera": null, "Marin": null,"Mariposa": null, "Mendocino": null, "Merced": null, "Modoc": null, "Mono'": null, "Monterey": null, "Napa": null, "Nevada": null, "Orange": null, "Out of CA": null, "Placer": null, "Plumas": null, "Riverside": null, "Sacramento": null, "San Benito": null, "San Bernardino": null, "San Diego": null, "San Francisco": null, "San Joaquin": null, "San Luis Obispo": null, "San Mateo": null, "Santa Barbara": null, "Santa Clara": null,"Santa Cruz": null,"Shasta": null,  "Sierra": null, "Siskiyou": null, "Solano": null, "Sonoma": null,"Stanislaus": null, "Sutter": null, "Tehama": null, "Trinity": null,"Tulare": null,"Tuolumne": null,"Unassigned": null, "Ventura": null, "Yolo": null,"Yuba": null,
+  }
+}
+//  filtered drop down 
+function getCovidSearchBar() {
+  document.getElementById("Data").innerHTML =
+    `<div class="input-field">
   <input id="search" type="search " class="autocomplete"
   placeholder="Search Your Area" required>
   
   </div>`
 
-      const covidEnterBtn = document.createElement('button')
-      covidEnterBtn.innerText = 'Enter'
-      covidEnterBtn.className = 'waves-effect waves-light btn-large'
-      covidEnterBtn.addEventListener('click', getCovidApi)
-      dataEl.append(covidEnterBtn);
+  const covidEnterBtn = document.createElement('button')
+  covidEnterBtn.innerText = 'Enter'
+  covidEnterBtn.className = 'waves-effect waves-light btn-large'
+  covidEnterBtn.addEventListener('click', getCovidApi)
+  dataEl.append(covidEnterBtn);
 
-      var elems = document.querySelectorAll('.autocomplete');
-      var instances = M.Autocomplete.init(elems, dropOptions);
-      const elem = document.querySelector('.autocomplete');
-      var instance = M.Autocomplete.getInstance(elem);
-      
-    }
-    covidFetchBtn.addEventListener('click', getCovidSearchBar)
-  }))
-
-
-// ================================================================covid========================================================================
-
-
-
-
+  var elems = document.querySelectorAll('.autocomplete');
+  var instances = M.Autocomplete.init(elems, dropOptions);
+  const elem = document.querySelector('.autocomplete');
+  var instance = M.Autocomplete.getInstance(elem);
+}
+covidFetchBtn.addEventListener('click', getCovidSearchBar)
 
 //  covid api fetch 
 function getCovidApi() {
   let prov = document.getElementById('search').value
   console.log(prov);
 
-
-  fetch('https://covid-19-statistics.p.rapidapi.com/reports?region_province=' + prov + '&iso=USA&region_name=US&q=US%20' + prov + '', options)
+  fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name=' + prov + '', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
-
-
-  // fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name=' + prov + '', options)
-  //   .then(response => response.json())
-  //   .then(response => console.log(response))
-  //   .catch(err => console.error(err));
-
 }
-
-
 // ================================================================covid========================================================================
 // safe travel url
 var safeTravelUrl = "https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en"
