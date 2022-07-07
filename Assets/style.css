@@ -7,11 +7,10 @@ body{
   margin: 0;
   padding: 0;
     }
-body {
-  background-color: #F8F9F9;
-  text-align: center;
-  padding: 20px;
-}
+    
+    header{
+
+    }
 
 img {
   background-attachment: fixed;
@@ -31,20 +30,19 @@ h1 {
     left: 400px;
     top: 125px;
   position: absolute;
-  left: 400px;
+  left: 443px;
   top: 125px;
   text-align: center;
+  justify-content: center;
 }
 
 h2 {
   color: greenyellow;
   font-size: 25px;
   position: absolute;
-    left: 525px;
+    left: 575px;
     top: 250px;
-  
-  left: 525px;
-  top: 250px;
+
 }
 
 .label-icon {
@@ -162,17 +160,6 @@ h3 {
 }
 
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  
-}
-
-body {
-  padding: 0 !important;
-}
 
 table {
   font-size: 12px;
@@ -189,7 +176,7 @@ table {
   left: 0;
   position: absolute;
   top: 0;
-  width: 440px;
+  width: 355px;
   z-index: 1;
   margin-left: 5px;
 }
@@ -205,10 +192,11 @@ table {
   width: 200px;
   height: 470px;
   overflow: auto;
-  left: 442px;
-  top: 0px;
+  left: 347pxx;
+  top: 56px;
   cursor: pointer;
   overflow-x: hidden;
+  z-index: 1;
 }
 
 #findhotels {
