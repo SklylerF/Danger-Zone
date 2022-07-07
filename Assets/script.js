@@ -1,4 +1,4 @@
-var dataEl = document.getElementById("Data");
+var dataEl = document.getElementById("main-data");
 var safeTravelUrl = document.getElementsByClassName("Data");
 var safeTravelBtn = document.getElementById("travel");
 var covidFetchBtn = document.getElementById("covid")
@@ -18,12 +18,31 @@ var dropOptions = {
 }
 //  filtered drop down 
 function getCovidSearchBar() {
-  document.getElementById("Data").innerHTML =
+  document.getElementById("main-data").innerHTML =
     `<div class="input-field">
   <input id="search" type="search " class="autocomplete"
   placeholder="Search Your Area" required>
-  
-  </div>`
+  </div>
+   
+    
+      <div class="row">
+        <h2>COVID -19 Cases in <span id="city"></span> <img src="" id="flag"></h2>
+        <div class="board">
+          <div class="col s6">
+          <div class="card blue"> <div class="card-content white-text"><i class="fa fa-tachometer fa-2x"></i><h5 class="card-title">Active Cases</h5><span id="active"></span></div></div>
+        </div>
+        <div class="col s6">
+          <div class="card green"><div class="card-content white-text"><i class="fa fa-th-list fa-2x"></i><h5 class="card-title">Confirmed Cases</h5><span id="cases"></span></div></div>
+        </div>
+        <div class="col s6">
+          <div class="card grey"><div class="card-content white-text"><i class="fa-solid fa-skull fa-2x"></i><h5 class="card-title">Deaths</h5><span id="death"></span></div></div>
+        </div>
+        <div class="col s6">
+          <div class="card red"><div class="card-content white-text"><i class="fa-solid fa-skull-crossbones fa-2x"></i><h5 class="card-title">Fatality Rate</h5><span id="f-rate"></span></div></div>
+        </div>
+        
+        </div>
+      </div>`;
 
   const covidEnterBtn = document.createElement('button')
   covidEnterBtn.innerText = 'Enter'
@@ -44,9 +63,20 @@ function getCovidApi() {
   console.log(prov);
 
   fetch('https://covid-19-statistics.p.rapidapi.com/reports?city_name=' + prov + '', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+    .then((response) =>{
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      document.getElementById("active").innerHTML= data.data[0].active;
+      document.getElementById("cases").innerHTML= data.data[0].confirmed;
+      document.getElementById("death").innerHTML= data.data[0].deaths;
+      document.getElementById("f-rate").innerHTML= data.data[0].fatality_rate;
+
+      
+
+    })
+    
 
 }
 // ================================================================covid========================================================================
@@ -57,7 +87,12 @@ function getCovidApi() {
 function showHeader(){
   document.getElementById("logo").style.display="block"
 }
-
+function fixMainDataWeather (){
+  document.getElementById("main-data").style.marginLeft= '0px'
+}
+function fixMainDataCovid (){
+  document.getElementById("main-data").style.marginLeft= "386px"
+}
 function hideHeader(){
   document.getElementById("logo").style.display= "none";
 }

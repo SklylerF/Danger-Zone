@@ -26,9 +26,9 @@
 <body>
   <!-- nav locations for buttons -->
   <nav class="nav">
-    <a onclick="showHeader()" class="waves-effect waves-light btn-large" href="#" id="covid">Covid Cases</a>
-    <a onclick="showHeader()" class="waves-effect waves-light btn-large" href="#" id="weatherbtn">Weather</a>
-    <a onclick="hideHeader()" class="waves-effect waves-light btn-large" href="#" id="hospital-tab">Hospitals</a>
+    <a onclick="showHeader(), fixMainDataCovid()"  class="waves-effect waves-light btn-large" href="#" id="covid">Covid Cases</a>
+    <a onclick="showHeader(), fixMainDataWeather()" class="waves-effect waves-light btn-large" href="#" id="weatherbtn">Weather</a>
+    <a onclick="hideHeader(), fixMainDataWeather()" class="waves-effect waves-light btn-large" href="#" id="hospital-tab">Hospitals</a>
   </nav>
 
 
