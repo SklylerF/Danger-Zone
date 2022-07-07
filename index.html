@@ -17,17 +17,18 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <title>Danger Zone</title>
   <!-- <p style="background-image: url(./images/city.jpg);"></p> -->
-  <img src="./Assets/images/city.jpg" alt="grey and black city" width="1385" height="350" />
+
+</head>
+<header id="logo"><img src="./Assets/images/city.jpg" alt="grey and black city" width="1385" height="350" />
   <h1 class="fa-solid fa-circle-radiation fa-5x">Danger Zon e</h1>
   <h2>"Have no fear, Danger Zone is here!"</h2>
-</head>
-
+</header>
 <body>
   <!-- nav locations for buttons -->
   <nav class="nav">
-    <a class="waves-effect waves-light btn-large" href="#" id="covid">Covid Cases</a>
-    <a class="waves-effect waves-light btn-large" href="#" id="weatherbtn">Weather</a>
-    <a class="waves-effect waves-light btn-large" href="#" id="travel">Travel</a>
+    <a onclick="showHeader()" class="waves-effect waves-light btn-large" href="#" id="covid">Covid Cases</a>
+    <a onclick="showHeader()" class="waves-effect waves-light btn-large" href="#" id="weatherbtn">Weather</a>
+    <a onclick="hideHeader()" class="waves-effect waves-light btn-large" href="#" id="hospital-tab">Hospitals</a>
   </nav>
 
 
@@ -42,14 +43,16 @@
     
     </div>
     
-    <div class="Data" id="main-data">
-    </div>
+    <div class="Data" id="main-data"></div>
 
 
 
 
 
-
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&sensor=false&libraries=places&v=weekly"
+    
+  ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./Assets/script.js"></script>
 </body>
