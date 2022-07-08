@@ -16,4 +16,8 @@ This app was created with the intention to help peple plan safer trips while the
 <img src="./Assets/images/2022-07-07 (8).png" alt="hospital tab functionability">
 <img src="./Assets/images/2022-07-07 (9).png" alt="hospital tab hospital locations">
 
-link to git hub repository <a href=<a href="https://github.com/SklylerF/Module-2-challange/"
+
+link to git hub repository <a href=https://sklylerf.github.io/Danger-Zone/
+
+
+link to git hub repository <a href=https://github.com/SklylerF/Danger-Zone
