@@ -18,4 +18,4 @@ This app was created with the intention to help peple plan safer trips while the
 link to git hub repository <a href=https://sklylerf.github.io/Danger-Zone/
 
 
-link to git hub repository <a href="https://github.com/SklylerF/Module-2-challange/"
+link to git hub repository <a href=https://github.com/SklylerF/Danger-Zone
