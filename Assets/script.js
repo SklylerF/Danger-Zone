@@ -540,7 +540,7 @@ const weatherApp = {
     let key = 'e3734cbb56b89b904559b3338d8b8282';
     let lang = 'en';
     let units = 'imperial';
-    let url = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + key + "&units=" + units + "&lang=" + lang + "";
+    let url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + key + "&units=" + units + "&lang=" + lang + "";
 
     fetch(url)
       .then((resp) => {
